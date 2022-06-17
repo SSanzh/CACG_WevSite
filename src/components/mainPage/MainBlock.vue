@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <the-header></the-header>
     <div class="main">
       <div class="content">
         <p class="pre_header">{{ content.preHeader }}</p>
@@ -20,11 +19,10 @@
 import { useLanguageStore } from '@/stores/language.js'
 import { mainBlockText } from './MainBlock.js'
 import MainButton from '../UI/MainButton.vue'
-import TheHeader from '../TheHeader.vue'
 
 export default {
   components: {
-    MainButton, TheHeader
+    MainButton
   },
   setup()  {
     const langStore = useLanguageStore()

@@ -1,24 +1,26 @@
 <template>
   <div class="main_header">
-    <div class="logo">
-      <img src="@/assets/images/Logo.svg" alt="CACG">
-    </div>
-    <div class="menu">
-      <router-link :to="item.link" v-for="item in headerText.headerMenu" :key="item">
-        {{ item.name }}
-      </router-link>
-    </div>
-    <div class="lang-switch">
-      <div class="current" @click="openLangMenu()">
-        {{ getLanguage }} 
-        <img ref="arrow" src="@/assets/svg/arrow.svg" alt="arrow">
+    <div class="container">
+      <div class="logo">
+        <img @click="$router.push('/')" src="@/assets/images/Logo.svg" alt="CACG">
       </div>
-      <div class="lang-module" v-if="langMenu">
-        <img class="ar" src="@/assets/svg/polygon.svg" alt="polygon">
-        <div v-for="item in lang" :key="item" 
-        :class="{selected: getLanguage==item}" 
-        @click="changeLanguages(item)">
-            {{ item }} <img :src="require(`@/assets/images/${item}.png`)">
+      <div class="menu">
+        <router-link :to="item.link" v-for="item in headerText.headerMenu" :key="item">
+          {{ item.name }}
+        </router-link>
+      </div>
+      <div class="lang-switch">
+        <div class="current" @click="openLangMenu()">
+          {{ getLanguage }} 
+          <img ref="arrow" src="@/assets/svg/arrow.svg" alt="arrow">
+        </div>
+        <div class="lang-module" v-if="langMenu">
+          <img class="ar" src="@/assets/svg/polygon.svg" alt="polygon">
+          <div v-for="item in lang" :key="item" 
+          :class="{selected: getLanguage==item}" 
+          @click="changeLanguages(item)">
+              {{ item }} <img :src="require(`@/assets/images/${item}.png`)">
+          </div>
         </div>
       </div>
     </div>
@@ -81,6 +83,11 @@ export default {
 <style lang="scss" scoped>
 .main_header {
   height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.container{
   width: 75%;
   margin: auto;
   display: flex;
@@ -89,6 +96,10 @@ export default {
 }
 .logo{
   width: 40%;
+
+  &>img {
+    cursor: pointer;
+  }
 }
 .menu {
   display: flex;

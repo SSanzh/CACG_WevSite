@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <the-header></the-header>
     <div class="backgroundImg">
       <div class="title">{{ content.Text }}</div>
       <div class="company">CACG</div>
@@ -11,12 +10,8 @@
 <script>
 import { aboutTitleText } from "./AboutTitle.js";
 import { useLanguageStore } from "@/stores/language.js";
-import  TheHeader  from "../TheHeader.vue"
 
 export default {
-  components: {
-    TheHeader 
-  },
   data() {
     return {
       content: aboutTitleText.RU,
@@ -52,6 +47,7 @@ export default {
 }
 
 .backgroundImg {
+  margin-top: 100px;
   height: 500px;
   width: 1920px;
   background-image: url("@/assets/images/aboutPageTitlePic.png");

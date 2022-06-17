@@ -1,5 +1,6 @@
 <template>
   <div class="app">
+    <the-header :class="{'headroom--unpinned': scrolled}"  v-on="handleScroll" class="headroom hidden_header"/>
     <router-view></router-view>
     <the-footer></the-footer> 
   </div>
@@ -7,13 +8,51 @@
 
 <script>
 import TheFooter from './components/TheFooter.vue'
+import TheHeader from './components/TheHeader.vue';
 export default {
-  components: { TheFooter },
+  components: { TheFooter, TheHeader },
+
+  data() {
+    return {
+      limitPosition: 100,
+      scrolled: false,
+      lastPosition: 0
+    };
+  },
+
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  unmounted() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+
+  methods: {
+    handleScroll() {
+      if(window.scrollY>0){
+        if (this.lastPosition < window.scrollY && this.limitPosition < window.scrollY) {
+          this.scrolled = true;
+          // move up!
+        } 
+        
+        if (this.lastPosition > window.scrollY) {
+          this.scrolled = false;
+          // move down
+        }
+        
+        this.lastPosition = window.scrollY;
+        // this.scrolled = window.scrollY > 250;
+      }else{
+        this.scrolled = false;
+      }
+    }
+  },
 
 }
 </script>
 
 <style lang="scss">
+
 
 @font-face{
   font-family: 'FFDinPro';
@@ -97,5 +136,30 @@ export default {
   padding: 0;
   box-sizing: border-box;
   color: #343434;
+}
+
+.app{
+  overflow-x: hidden;
+  font-family: FFDinPro;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden_header {
+  position: fixed;
+  z-index: 1;
+  background-color: #FFFFFF;
+}
+
+.headroom {
+    will-change: transform;
+    transition: transform 0.5s linear;
+}
+.headroom--pinned {
+    transform: translateY(0%);
+}
+.headroom--unpinned {
+    transform: translateY(-100%);
 }
 </style>
