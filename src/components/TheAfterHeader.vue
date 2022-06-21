@@ -38,9 +38,8 @@ export default {
 .title {
   position: relative;
   top: 189px;
-  left: 790px;
   height: 36px;
-  width: 350px;
+  width: 100%;
 
   font-family: FFDinPro;
   letter-spacing: -0.02em;
@@ -54,9 +53,8 @@ export default {
 
 .company {
   position: absolute;
-  width: 760px;
+  width: 100%;
   height: 36px;
-  left: 581px;
   top: 275px;
 
   font-family: FFDinPro;
