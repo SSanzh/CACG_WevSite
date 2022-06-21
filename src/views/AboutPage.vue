@@ -1,18 +1,25 @@
 <template>
     <div class="main">
-        <about-title/>
-        <our-principals/>
-        <the-main-info/>
+      <the-after-header :content="content.title" />
+      <our-principals/>
+      <the-main-info/>
     </div>    
 </template>
 
 <script>
-import AboutTitle from '@/components/aboutPage/AboutTitle.vue'
+import { aboutPageText } from './AboutPage'
 import TheMainInfo from '@/components/aboutPage/MainInfo.vue'
 import OurPrincipals from '@/components/aboutPage/OurPrinciples.vue'
+import TheAfterHeader from '@/components/TheAfterHeader.vue'
 
 export default {
-  components: { TheMainInfo, AboutTitle, OurPrincipals },
+  components: { TheMainInfo, OurPrincipals, TheAfterHeader },
+
+  data() {
+    return {
+      content: aboutPageText.RU,
+    }
+  },
 
 }
 </script>
