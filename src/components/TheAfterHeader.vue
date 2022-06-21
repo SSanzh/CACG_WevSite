@@ -21,8 +21,8 @@ export default {
 
 <style scoped>
 .container{
-  height: 600px;
-  width: 1920px;
+  height: 500px;
+  width: 100%;
   font-family: FFDinPro;
   background: linear-gradient(163.28deg, #FFFFFF 9.02%, #EDF5EE 88.12%);
 }
@@ -30,7 +30,8 @@ export default {
 .backgroundImg {
   margin-top: 100px;
   height: 500px;
-  width: 1920px;
+  width: 100%;
+  background-position: center;
   position: relative;
 }
 
