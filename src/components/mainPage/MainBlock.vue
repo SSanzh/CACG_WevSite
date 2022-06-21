@@ -16,35 +16,18 @@
 </template>
 
 <script>
-import { useLanguageStore } from '@/stores/language.js'
-import { mainBlockText } from './MainBlock.js'
 import MainButton from '../UI/MainButton.vue'
 
 export default {
   components: {
     MainButton
   },
-  setup()  {
-    const langStore = useLanguageStore()
-
-    return { langStore }
+  props: {
+    content: {
+      type: Object,
+      required: true
+    },
   },
-  data(){
-    return {
-      content: mainBlockText.RU,
-    }
-  },
-  computed: {
-    getLanguage() {
-      return this.langStore.language
-    }
-  },
-
-  watch: {
-    getLanguage(newLang){
-      this.content = mainBlockText[newLang];
-    }
-  }
 }
 </script>
 

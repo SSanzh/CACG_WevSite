@@ -1,26 +1,26 @@
 <template>
   <div class="main">
-    <p class="header_text partners">{{ partnersHeader }}</p>
+    <p class="header_text partners">{{ content.headerText2 }}</p>
     <div class="wrapper">
       <div class="blur"></div>
       <div class="inner">
-        <img class="partner" v-for="partner in partners" :key="partner" :src="partner" alt="">
+        <img class="partner" v-for="partner in content.partners" :key="partner" :src="partner" alt="">
       </div>
       <div class="inner">
-        <img class="partner" v-for="partner in partners" :key="partner" :src="partner" alt="">
+        <img class="partner" v-for="partner in content.partners" :key="partner" :src="partner" alt="">
       </div>
     </div>
     <div class="vacancy">
-      <p class="header_text">{{ vacancy.headerText }}</p>
+      <p class="header_text">{{ content.headerText1 }}</p>
       <div class="content">
         <div class="image">
-          <img :src="img" alt="">
+          <img :src="content.img" alt="">
         </div>
         <div class="text">
-          <p class="content_header">{{ vacancy.content.header }}</p>
-          <p class="context">{{ vacancy.content.text }}</p><br>
-          <p class="context">{{ vacancy.content.text2 }}</p>
-          <main-button :mt="'98px'" :width="'232px'">{{ vacancy.content.buttonText }}</main-button>
+          <p class="content_header">{{ content.content.header }}</p>
+          <p class="context">{{ content.content.text }}</p><br>
+          <p class="context">{{ content.content.text2 }}</p>
+          <main-button :mt="'98px'" :width="'232px'">{{ content.content.buttonText }}</main-button>
         </div>
       </div>
     </div>
@@ -28,36 +28,15 @@
 </template>
 
 <script>
-import { useLanguageStore } from '@/stores/language.js'
-import { partners, vacancyText } from './PartnersVacancy.js'
 import MainButton from '../UI/MainButton.vue'
 export default {
   components: { MainButton },
-  setup()  {
-    const langStore = useLanguageStore()
-
-    return { langStore }
+  props: {
+    content: {
+      type: Object,
+      required: true
+    },
   },
-  data(){
-    return {
-      vacancy: vacancyText.RU,
-      partners: partners.partners,
-      partnersHeader: partners.headerText.RU,
-      img: vacancyText.img
-    }
-  },
-  computed: {
-    getLanguage() {
-      return this.langStore.language
-    }
-  },
-
-  watch: {
-    getLanguage(newLang){
-      this.vacancy = vacancyText[newLang];
-      this.partnersHeader = partners.headerText[newLang];
-    }
-  }
 }
 </script>
 
@@ -160,6 +139,7 @@ export default {
   padding-top: 83px;
 }
 .context{
-  width: 75%;
+  width: 80%;
+  text-align: center;
 }
 </style>

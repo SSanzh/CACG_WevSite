@@ -36,10 +36,9 @@ export default {
   },
   data() {
     return {
-      content: aboutPageText.RU,
+      content: aboutPageText[this.langStore.language],
     }
   },
-
   computed: {
     getLanguage() {
       return this.langStore.language

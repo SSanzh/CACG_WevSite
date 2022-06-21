@@ -13,31 +13,9 @@
 </template>
 
 <script>
-import { useLanguageStore } from '@/stores/language.js'
-import { servicesBlockText } from './ServicesBlock.js'
+
 export default {
-  setup()  {
-    const langStore = useLanguageStore()
-
-    return { langStore }
-  },
-  data(){
-    return {
-      content: servicesBlockText.RU,
-      defaultContent: servicesBlockText.default,
-    }
-  },
-  computed: {
-    getLanguage() {
-      return this.langStore.language
-    }
-  },
-
-  watch: {
-    getLanguage(newLang){
-      this.content = servicesBlockText[newLang];
-    }
-  }
+  
 }
 </script>
 

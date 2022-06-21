@@ -29,31 +29,13 @@
 <script>
 import MainButton from '../UI/MainButton.vue'
 import TheIconText from '../TheIconText.vue'
-import { aboutBlockText } from './AboutBlock.js'
-import { useLanguageStore } from '@/stores/language'
 
 export default {
   components: { MainButton, TheIconText },
-  setup() {
-    const langStore = useLanguageStore()
-
-    return { langStore }
-  },
+  inject: ['content'],
   data() {
     return {
-      content: aboutBlockText.RU,
-    }
-  },
-  computed: {
-    getLanguage() {
-      return this.langStore.language
-    }
-  },
-
-
-  watch: {
-    getLanguage(newLang){
-      this.content = aboutBlockText[newLang];
+      content: this.content.aboutBlock
     }
   }
 }
