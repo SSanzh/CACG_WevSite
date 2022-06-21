@@ -2,37 +2,20 @@
   <div class="container">
     <div class="title">{{content.title}}</div>
     <img class="image" src="../../assets/images/aboutPage/about2.png" alt="">
-    <div class="text">{{content.Text}}</div>
+    <div class="text">{{content.text}}</div>
     
     <div class="line"></div>
   </div>
 </template>
 
 <script>
-import { useLanguageStore } from '@/stores/language.js'
-import { aboutMissionText } from './AboutMission.js'
 
 export default {
-  setup()  {
-    const langStore = useLanguageStore()
-
-    return { langStore }
-  },
-  data(){
-    return {
-      content: aboutMissionText.RU,
-    }
-  },
-  computed: {
-    getLanguage() {
-      return this.langStore.language
-    }
-  },
-
-  watch: {
-    getLanguage(newLang){
-      this.content = aboutMissionText[newLang];
-    }
+  props: {
+    content: {
+      type: Object,
+      required: true
+    },
   }
 }
 </script>

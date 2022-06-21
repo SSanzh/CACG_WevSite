@@ -1,37 +1,21 @@
 <template>
   <div class="principles-wrapper">
-    <div class="title">{{ content.Title }}</div>
+    <div class="title">{{ content.title }}</div>
     <div class="principles-flex">
-      <div class="principle" v-for="item in content.Principles" :key="item" v-html="item.text"></div>
+      <div class="principle" v-for="item in content.principles" :key="item" v-html="item.text"></div>
     </div>
   </div>
 </template>
 
 <script>
-import { ourPrinciplesText } from '@/components/aboutPage/OurPrinciples.js'
-import { useLanguageStore } from '@/stores/language'
 
 
 export default {
-  data() {
-    return {
-      content: ourPrinciplesText.RU,
-    }
-  },
-  setup() {
-    const langStore = useLanguageStore()
-
-    return{ langStore }
-  },
-  computed: {
-    getLanguage() {
-      return this.langStore.language
-    }
-  },
-  watch: {
-    getLanguage(newLang){
-      this.content = ourPrinciplesText[newLang];
-    }
+  props: {
+    content: {
+      type: Object,
+      required: true
+    },
   }
 }
 
@@ -51,7 +35,6 @@ export default {
   top: 73px;
   left: 598.62px;
 
-  font-family: FFDinPro;
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
@@ -72,7 +55,6 @@ export default {
   display: flex;
   justify-content: space-between;
 
-  font-family: FFDinPro;
   font-weight: 500;
   font-size: 22px;
   line-height: 36px;
