@@ -1,39 +1,20 @@
 <template>
   <div class="container">
-    <div class="backgroundImg">
-      <div class="title">{{ content.Text }}</div>
-      <div class="company">CACG</div>
+    <div class="backgroundImg" :style="{backgroundImage: content.bgImg}">
+      <div class="title">{{ content.title }}</div>
+      <div class="company">{{ content.text }}</div>
     </div>
   </div>
 </template>
 
 <script>
-import { aboutTitleText } from "./AboutTitle.js";
-import { useLanguageStore } from "@/stores/language.js";
-
 export default {
-  data() {
-    return {
-      content: aboutTitleText.RU,
-    }
-  },
-  setup() {
-    const langStore = useLanguageStore()
-
-    return{ langStore }
-  },
-  computed: {
-    getLanguage() {
-      return this.langStore.language
-    }
-  },
-  
-
-  watch: {
-    getLanguage(newLang) {
-      this.content = aboutTitleText[newLang];
-    }
-  }
+    props: {
+        content: {
+            type: Object,
+            required: true
+        },
+    },
 }
 
 </script>
@@ -50,7 +31,6 @@ export default {
   margin-top: 100px;
   height: 500px;
   width: 1920px;
-  background-image: url("@/assets/images/aboutPageTitlePic.png");
   position: relative;
 }
 
