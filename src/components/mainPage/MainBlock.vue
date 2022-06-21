@@ -51,7 +51,7 @@ export default {
 <style lang="scss" scoped>
 .container{
   height: 1080px;
-  width: 1920px;
+  width: 100%;
   font-family: FFDinPro;
   background: linear-gradient(163.28deg, #FFFFFF 9.02%, #EDF5EE 88.12%);
 }
@@ -60,7 +60,7 @@ export default {
   align-items: center;
   justify-content: center;
   height: 980px;
-  width: 1920px;
+  width: 100%;
 
 }
 .content{

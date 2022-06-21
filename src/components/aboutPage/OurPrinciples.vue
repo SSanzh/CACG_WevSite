@@ -40,7 +40,7 @@ export default {
 <style lang="scss" scoped>
 
 .principles-wrapper {
-  width: 1920px;
+  width: 100%;
   height: 380px;
 }
 
@@ -67,7 +67,7 @@ export default {
   position: relative;
   top: 166px;
   left: 240px;
-  width: 1440px;
+  width: 75%;
   height: 72px;
   display: flex;
   justify-content: space-between;

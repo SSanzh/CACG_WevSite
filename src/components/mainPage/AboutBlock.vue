@@ -63,7 +63,7 @@ export default {
 .main_about{
   margin: auto;
   height: 1080px;
-  width: 1440px;
+  width: 75%;
   border-bottom: 2px solid #D3BFBF;
   font-family: FFDinPro;
 }

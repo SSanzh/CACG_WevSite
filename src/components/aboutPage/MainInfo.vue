@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <about-company></about-company>
-    <about-mission></about-mission>
+    <about-company style="height: 931px"></about-company>
+    <about-mission style="height: 1005px"></about-mission>
     <about-values></about-values>
     <why-us></why-us>
   </div>
@@ -28,7 +28,7 @@ export default {
 
 <style scoped>
 .container {
-  width: 1920px;
+  width: 100%;
   height: 3443px;
 }
 
