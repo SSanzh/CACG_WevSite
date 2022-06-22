@@ -21,7 +21,7 @@ export default {
 
 <style scoped>
 .container{
-  height: 600px;
+  height: 500px;
   width: 1920px;
   font-family: FFDinPro;
   background: linear-gradient(163.28deg, #FFFFFF 9.02%, #EDF5EE 88.12%);

@@ -20,7 +20,7 @@ export default {
       content: aboutPageText.RU,
     }
   },
-
+  
 }
 </script>
 

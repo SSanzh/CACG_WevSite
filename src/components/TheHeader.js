@@ -11,7 +11,7 @@ export const headerText = {
             }, 
             {
                 name: "Вакансии",
-                link: "" 
+                link: "/vacancy" 
             }, 
             {
                 name: "Контакты",
