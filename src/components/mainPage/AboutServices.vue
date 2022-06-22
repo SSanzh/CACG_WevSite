@@ -16,6 +16,6 @@ export default {
 <style lang="scss" scoped>
 .main {
   background: linear-gradient(132.63deg, #FCFCFC 18.7%, #EEEDED 84.53%);
-  width: 1920px;
+  width: 100%;
 }
 </style>

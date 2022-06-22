@@ -22,7 +22,11 @@ export default {
 <style scoped>
 .container{
   height: 500px;
+<<<<<<< HEAD
   width: 1920px;
+=======
+  width: 100%;
+>>>>>>> 14e11345527964706a58be98968d951af3e4c59e
   font-family: FFDinPro;
   background: linear-gradient(163.28deg, #FFFFFF 9.02%, #EDF5EE 88.12%);
 }
@@ -30,16 +34,16 @@ export default {
 .backgroundImg {
   margin-top: 100px;
   height: 500px;
-  width: 1920px;
+  width: 100%;
+  background-position: center;
   position: relative;
 }
 
 .title {
   position: relative;
   top: 189px;
-  left: 790px;
   height: 36px;
-  width: 350px;
+  width: 100%;
 
   font-family: FFDinPro;
   letter-spacing: -0.02em;
@@ -53,9 +57,8 @@ export default {
 
 .company {
   position: absolute;
-  width: 760px;
+  width: 100%;
   height: 36px;
-  left: 581px;
   top: 275px;
 
   font-family: FFDinPro;
