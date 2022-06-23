@@ -31,6 +31,7 @@ export const vacancyPageText = {
             message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
             choose: "Выберите файл",
             buttonText: "Отправить",
+            error: ['Заполните все поля корректно', 'Мы приняли вашу заявку']
         }
     },
     KZ: {
