@@ -10,21 +10,21 @@
                 <div class="line">
                     <div class="label-input">
                         <p>{{ content.name }}</p>
-                        <vacancy-input />
+                        <vacancy-input v-model="name" />
                     </div>
                     <div class="label-input">
                         <p>{{ content.position }}</p>
-                        <vacancy-input />
+                        <vacancy-input v-model="position" />
                     </div>
                 </div>
                 <div class="line">
                     <div class="label-input">
                         <p>{{ content.email }}</p>
-                        <vacancy-input />
+                        <vacancy-input v-model="email" />
                     </div>
                     <div class="label-input">
                         <p>{{ content.phone }}</p>
-                        <vacancy-input />
+                        <vacancy-input v-model="phone" />
                     </div>
                 </div>
             </div>
@@ -37,21 +37,30 @@
             </div>
             <div class="right" style="gap: 26px">
                 <p>{{ content.resume }}</p>
-                <vacancy-textarea />
+                <vacancy-textarea v-model="message"/>
                 <div class="line">
-                    <div>{{ content.choose }}</div>
+                    <label class="input-file">
+                        <input type="file" @change="onFileChange($event)" />
+                        {{ content.choose }}
+                    </label>
                     <p class="message">{{ content.message }}</p>
                 </div>
             </div>
         </div>
-        <main-button style="margin-top: 89px;">{{ content.buttonText }}</main-button>
+        <p v-if="error" class="error" :class="{good: !isError}">{{ error }}</p>
+        <main-button style="margin-top: 89px;" @click="onSubmit()">{{ content.buttonText }}</main-button>
     </div>
 </template>
 
 <script>
+/* eslint-disable */
 import VacancyInput from '../UI/VacancyInput.vue'
 import VacancyTextarea from '../UI/VacancyTextarea.vue'
 import MainButton from '../UI/MainButton.vue'
+import VacancyService from '../../services/vacancy.service.js'
+
+const vacancyService = new VacancyService();
+
 export default {
   components: { VacancyInput, VacancyTextarea, MainButton },
     props: {
@@ -59,6 +68,75 @@ export default {
             type: Object,
             required: true,
         },
+    },
+    data() {
+        return {
+            name: '',
+            position: '',
+            email: '',
+            phone: '',
+            message: '',
+            file: '',
+            error: '',
+            isError: false,
+        }
+    },
+    methods: {
+        onFileChange(event) {
+            this.file = event.target.files[0];
+        },
+        sendResume() {
+            let title = this.name + ' ' + this.position;
+            let content = 'Email: ' + this.email + '\n' + 'Телефон: ' + this.phone + '\n' + 'Сопроводительное письмо: ' + this.message;
+            vacancyService.sendEmail(title, content, this.file);
+        },
+        checkData() {
+            if (this.name && this.position && this.email && this.phone) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        isEmailCorrect() {
+            let email = this.email;
+            let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        },
+        isPhoneCorrect() {
+            let phone = this.phone;
+            let re = /^\+?[0-9]{10,15}$/;
+            return re.test(String(phone));
+        },
+        onSubmit(){
+            if (this.checkData() && this.isEmailCorrect() && this.isPhoneCorrect()) {
+                this.sendResume();
+                this.reset();
+                this.error = this.content.error[1];
+                this.isError = false;
+            } else {
+                this.error = this.content.error[0];
+                this.isError = true;
+            }
+        },
+        reset(){
+            this.name = '';
+            this.position = '';
+            this.email = '';
+            this.phone = '';
+            this.message = '';
+            this.file = '';
+            this.error = '';
+        }
+    },
+
+    watch: {
+        error(newVal){
+            if(newVal!=''){
+                setTimeout(() => {
+                this.error = '';
+                }, 4000);
+            }
+        }
     }
 }
 </script>
@@ -126,8 +204,6 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 13px;
-
-   
 }
 p{
     font-style: normal;
@@ -142,5 +218,38 @@ p{
     line-height: 22px;
 
     width: 74.34%;
+}
+input[type="file"] {
+    display: none;
+}
+.input-file{
+    width: 162px;
+    height: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #EEF1F4;
+    border-radius: 6px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+
+    letter-spacing: -0.02em;
+    font-feature-settings: 'calt' off;
+
+    color: #667080;
+
+    cursor: pointer;
+}
+.error {
+    top: 50px;
+    position: relative;
+    color: red;
+}
+.good {
+    color: green;
 }
 </style>

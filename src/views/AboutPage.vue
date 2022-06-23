@@ -44,16 +44,7 @@ export default {
       return this.langStore.language
     }
   },
-<<<<<<< HEAD
   
-=======
-
-  watch: {
-    getLanguage(newLang){
-      this.content = aboutPageText[newLang];
-    }
-  }
->>>>>>> 14e11345527964706a58be98968d951af3e4c59e
 }
 
 </script>

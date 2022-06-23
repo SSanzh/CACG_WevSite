@@ -136,11 +136,11 @@ export default {
   padding: 0;
   box-sizing: border-box;
   color: #343434;
+  font-family: FFDinPro;
 }
 
 .app{
   overflow-x: hidden;
-  font-family: FFDinPro;
   display: flex;
   flex-direction: column;
   align-items: center;
