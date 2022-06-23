@@ -24,6 +24,7 @@ export default {
 <style lang="scss" scoped>
 
 .principles-wrapper {
+  position: relative;
   width: 100%;
   height: 380px;
 }

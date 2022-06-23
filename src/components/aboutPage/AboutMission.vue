@@ -23,6 +23,7 @@ export default {
 <style scoped>
 .container {
   position: relative;
+
 }
 
 .title {
@@ -71,7 +72,7 @@ export default {
   width: 75%;
   height: 0px;
   left: 12.5%;
-  top: 930px;
+  bottom: 0;
 
   border: 2px solid #D3BFBF;
 }

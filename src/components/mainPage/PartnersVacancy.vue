@@ -57,7 +57,7 @@ export default {
     padding: 160px 0;
   }
 }
-.wrapper{
+.wrapper {
   width: 100%;
   display: flex;
   align-items: center;
@@ -67,7 +67,7 @@ export default {
       animation-play-state: paused;
   }
 }
-.inner{
+.inner {
   display: flex;
   align-items: center;
   gap: 110px;
@@ -76,7 +76,7 @@ export default {
 
   
 }
-.partner:hover{
+.partner:hover {
   cursor: pointer;
 }
 @keyframes marquee {
@@ -87,7 +87,7 @@ export default {
   transform: translateX(-100%)
 }
 }
-.blur{
+.blur {
   background: linear-gradient(90deg, #FCFCFC 13.33%, rgba(252, 252, 252, 0.3) 26.87%, rgba(252, 252, 252, 0) 50.54%, rgba(252, 252, 252, 0.3) 73.23%, #FCFCFC 87.29%);
 
   width: 100%;
@@ -97,17 +97,17 @@ export default {
   pointer-events: none;
   z-index: 3;
 }
-.vacancy{
+.vacancy {
   padding-top: 240px;
   width: 75%;
   margin: auto;
 }
-.content{
+.content {
   display: flex;
   padding-bottom: 180px;
   padding-top: 94px;
 }
-.text{
+.text {
   font-weight: 500;
   font-size: 24px;
   line-height: 36px;
@@ -122,7 +122,7 @@ export default {
   flex-direction: column;
   align-items: center;
 }
-.content_header{
+.content_header {
   font-weight: 700;
   font-size: 32px;
   line-height: 36px;
@@ -138,7 +138,7 @@ export default {
   padding-bottom: 87px;
   padding-top: 83px;
 }
-.context{
+.context {
   width: 80%;
   text-align: center;
 }

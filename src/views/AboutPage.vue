@@ -2,10 +2,12 @@
     <div class="main">
       <the-after-header :content="content.title" />
       <our-principals :content="content.ourPrinciples" />
-      <about-company :content="content.aboutCompany" style="height: 931px"></about-company>
-      <about-mission :content="content.aboutMission" style="height: 1005px"></about-mission>
-      <about-values></about-values>
-      <why-us></why-us>
+      <div class="wrapper">
+        <about-company :content="content.aboutCompany" style="height: 931px"></about-company>
+        <about-mission :content="content.aboutMission" style="height: 1005px"></about-mission>
+        <about-values :content="content.aboutValues" style="height: 622px"></about-values>
+        <why-us style="height: 622px"></why-us>
+      </div>
     </div>    
 </template>
 
@@ -44,20 +46,13 @@ export default {
       return this.langStore.language
     }
   },
-<<<<<<< HEAD
   
-=======
-
-  watch: {
-    getLanguage(newLang){
-      this.content = aboutPageText[newLang];
-    }
-  }
->>>>>>> 14e11345527964706a58be98968d951af3e4c59e
 }
 
 </script>
 
 <style>
-
+  .wrapper {
+    background: linear-gradient(132.63deg, #FCFCFC 18.7%, #EEEDED 84.53%);
+  }
 </style>

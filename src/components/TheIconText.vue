@@ -1,8 +1,8 @@
 <template>
     <div class="container">
         <img :src="require(`@/assets/svg/${item.svg}`)" alt="">
-        <p class="title" v-if="item.title">{{ item.title }}</p>
-        <p class="description" v-if="item.description">{{ item.description }}</p>
+        <p class="title" v-if="item.title" :style="item.titleStyle">{{ item.title }}</p>
+        <p class="description" v-if="item.description" :style="item.descriptionStyle">{{ item.description }}</p>
     </div>
 </template>
 
