@@ -37,6 +37,7 @@ export default {
 .description{
     font-weight: 400;
     font-size: 24px;
-    line-height: 22px;
+    line-height: 36px;
 }
+
 </style>

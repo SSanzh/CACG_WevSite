@@ -6,9 +6,9 @@
         <about-company :content="content.aboutCompany" style="height: 931px"></about-company>
         <about-mission :content="content.aboutMission" style="height: 1005px"></about-mission>
         <about-values :content="content.aboutValues" style="height: 622px"></about-values>
-        <why-us style="height: 622px"></why-us>
+        <why-us :content="content.whyUs" style="height: 865px"></why-us>
       </div>
-    </div>    
+    </div>
 </template>
 
 <script>
@@ -21,9 +21,8 @@ import AboutMission from "@/components/aboutPage/AboutMission.vue";
 import AboutValues from "@/components/aboutPage/AboutValues.vue";
 import WhyUs from "@/components/aboutPage/WhyUs.vue";
 
-
 export default {
-  components: { 
+  components: {
     OurPrincipals,
     TheAfterHeader,
     AboutCompany,
@@ -46,7 +45,7 @@ export default {
       return this.langStore.language
     }
   },
-  
+
 }
 
 </script>

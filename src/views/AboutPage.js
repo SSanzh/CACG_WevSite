@@ -57,6 +57,26 @@ export const aboutPageText = {
                     descriptionStyle: {fontWeight: 700, marginTop: '30px'}
                 },
             ]
+        },
+        whyUs: {
+            title: "Почему CACG?",
+            list: [
+                { 
+                    text: "Один из лидеров на рынке информационных услуг Казахстана;"
+                },
+                { 
+                    text: "Профессиональная команда и собственная разработка;"
+                },
+                { 
+                    text: "Качественный анализ потребностей и задач заказчика;"
+                },
+                { 
+                    text: "Уникальные проекты, разработанные специально для Вас;"
+                },
+                { 
+                    text: "В числе клиентов – национальные компании, государственные и международные организации, крупный и средний бизнес."
+                },
+            ]
         }
 
     },
@@ -111,6 +131,26 @@ export const aboutPageText = {
                     description: "Возможность совершать ошибки",
                 },
             ]
+        },
+        whyUs: {
+            title: "Почему CACG?",
+            list: [
+                { 
+                    text: "Один из лидеров на рынке информационных услуг Казахстана;"
+                },
+                { 
+                    text: "Профессиональная команда и собственная разработка;"
+                },
+                { 
+                    text: "Качественный анализ потребностей и задач заказчика;"
+                },
+                { 
+                    text: "Уникальные проекты, разработанные специально для Вас;"
+                },
+                { 
+                    text: "В числе клиентов – национальные компании, государственные и международные организации, крупный и средний бизнес."
+                },
+            ]
         }
     },
     EN: {
@@ -162,6 +202,26 @@ export const aboutPageText = {
                 {
                     svg: "errorMessage.svg",
                     description: "Ability to make mistakes",
+                },
+            ]
+        },
+        whyUs: {
+            title: "Почему CACG?",
+            list: [
+                { 
+                    text: "One of the leaders in the information services market of Kazakhstan;"
+                },
+                { 
+                    text: "Professional team and own development;"
+                },
+                { 
+                    text: "Qualitative analysis of the needs and tasks of the customer;"
+                },
+                { 
+                    text: "Unique projects designed especially for you;"
+                },
+                { 
+                    text: "Among the clients are national companies, state and international organizations, large and medium-sized businesses."
                 },
             ]
         }
