@@ -7,7 +7,7 @@ export const headerText = {
             }, 
             {
                 name:"Услуги",
-                link: "/"
+                link: "/services"
             }, 
             {
                 name: "Вакансии",

@@ -9,7 +9,7 @@
 <script>
 import { vacancyPageText } from './VacancyPage'
 import TheAfterHeader from '@/components/TheAfterHeader.vue'
-import InfoBlock from '@/components/vacancyPage/InfoBlock.vue'
+import InfoBlock from '@/components/InfoBlock.vue'
 import FormBlock from '@/components/vacancyPage/FormBlock.vue'
 
 export default {
